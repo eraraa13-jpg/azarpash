@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { StoreProvider } from './context/StoreContext';
 import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
@@ -9,7 +9,7 @@ import AdminLogin from './pages/AdminLogin';
 function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
@@ -17,7 +17,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/login" element={<AdminLogin />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </StoreProvider>
   );
 }
